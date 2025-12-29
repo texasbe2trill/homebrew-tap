@@ -1,8 +1,8 @@
 class Scenariokit < Formula
   desc "Visual security storyboards from macOS unified logs for incident response"
   homepage "https://github.com/texasbe2trill/ScenarioKit"
-  url "https://github.com/texasbe2trill/ScenarioKit/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "b0178a90e4d8304017d7ecef22c2fba3d63b03b01777145042edbfba4059f6da"
+  url "https://github.com/texasbe2trill/ScenarioKit/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "d2b9c2afdd3517423ae6689c89722acf73f48f424bb5bed945300a3c7453bb40"
   license "MIT"
   head "https://github.com/texasbe2trill/ScenarioKit.git", branch: "main"
 
@@ -26,6 +26,6 @@ class Scenariokit < Formula
   end
 
   test do
-    assert_match "1.0.0", shell_output("#{bin}/scenariokit --version")
+    assert_match "1.0.1", shell_output("#{bin}/scenariokit --version")
   end
 end
