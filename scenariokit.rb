@@ -2,7 +2,7 @@ class Scenariokit < Formula
   desc "Visual security storyboards from macOS unified logs for incident response"
   homepage "https://github.com/texasbe2trill/ScenarioKit"
   url "https://github.com/texasbe2trill/ScenarioKit/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "d2b9c2afdd3517423ae6689c89722acf73f48f424bb5bed945300a3c7453bb40"
+  sha256 "4e16e9973ded086a731838e766dec7e59980f20dcac2d0e5a9212c2176768dcd"
   license "MIT"
   head "https://github.com/texasbe2trill/ScenarioKit.git", branch: "main"
 
