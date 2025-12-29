@@ -11,13 +11,21 @@ class Scenariokit < Formula
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/scenariokit"
     
-    # Install Sigma rules
-    (share/"scenariokit").install "Sources/ScenarioKit/Resources"
+    # Install resource bundle and binary to libexec
+    # The bundle must be in the same directory as the binary
+    libexec.install ".build/release/scenariokit"
+    libexec.install ".build/release/ScenarioKit_ScenarioKit.bundle"
+    
+    # Create wrapper script in bin that calls the libexec binary
+    (bin/"scenariokit").write <<~EOS
+      #!/bin/bash
+      exec "#{libexec}/scenariokit" "$@"
+    EOS
+    (bin/"scenariokit").chmod 0755
   end
 
   test do
-    system bin/"scenariokit", "--version"
+    assert_match "1.0.0", shell_output("#{bin}/scenariokit --version")
   end
 end
