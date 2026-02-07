@@ -9,6 +9,7 @@ class MacosTrust < Formula
   head "https://github.com/texasbe2trill/macos-trust.git", branch: "main"
 
   depends_on "python@3.11"
+  depends_on "rust" => :build
   depends_on macos: :catalina
 
   def install
@@ -17,7 +18,8 @@ class MacosTrust < Formula
     # Create venv with pip available, then install package + CLI entrypoint
     system python, "-m", "venv", "--system-site-packages", libexec
     system libexec/"bin/python", "-m", "ensurepip", "--upgrade"
-    system libexec/"bin/pip", "install", buildpath
+    # Build from source to avoid binary wheel relinking issues (pydantic-core)
+    system libexec/"bin/pip", "install", "--no-binary", ":all:", buildpath
     bin.install_symlink libexec/"bin/macos-trust"
   end
 
