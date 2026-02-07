@@ -12,9 +12,8 @@ class MacosTrust < Formula
   depends_on macos: :catalina
 
   def install
-    virtualenv_create(libexec, "python3.11")
-    system libexec/"bin/pip", "install", buildpath
-    bin.install_symlink libexec/"bin/macos-trust"
+    venv = virtualenv_create(libexec, "python3.11")
+    venv.pip_install buildpath
   end
 
   test do
