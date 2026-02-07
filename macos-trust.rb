@@ -2,7 +2,7 @@ class MacosTrust < Formula
   desc "Intelligent macOS security scanner with interactive HTML reports"
   homepage "https://github.com/texasbe2trill/macos-trust"
   url "https://github.com/texasbe2trill/macos-trust/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "24bbaf7028afa74da99a78af4e86002d1c61f4cb7ba7dc009b53caf2bd1a1165"
+  sha256 "3d6725f0215f12aabbc7339ad437476ab8c791efa3a382f6a36958b9423f097b"
   license "MIT"
 
   depends_on "python@3.11"
