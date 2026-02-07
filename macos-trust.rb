@@ -13,7 +13,6 @@ class MacosTrust < Formula
 
   def install
     virtualenv_create(libexec, "python3.11")
-    system libexec/"bin/pip", "install", "--upgrade", "pip"
     system libexec/"bin/pip", "install", buildpath
     bin.install_symlink libexec/"bin/macos-trust"
   end
