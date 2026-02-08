@@ -1,8 +1,8 @@
 class MacosTrust < Formula
   desc "Intelligent macOS security scanner with interactive HTML reports"
   homepage "https://github.com/texasbe2trill/macos-trust"
-  url "https://github.com/texasbe2trill/macos-trust/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "eef0f31ce9b5f1118b104e21e8dcb2cc8b2a62e971e9dc8f62d0721a5f965385"
+  url "https://github.com/texasbe2trill/macos-trust/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "df986c244b239c3e59325535fb8b2c497b9accd2087ea1674c431745582ac4a8"
   license "MIT"
 
   depends_on "python@3.11"
@@ -18,6 +18,6 @@ class MacosTrust < Formula
   end
 
   test do
-    assert_match "0.4.1", shell_output("#{bin}/macos-trust --version")
+    assert_match "0.4.2", shell_output("#{bin}/macos-trust --version")
   end
 end
